@@ -9,8 +9,6 @@ class Person:
         if self.person_age < 1 or self.person_age >= 20:
             print("age must be 1 to 19")
         else:
-            # if self.person_gender == 'female' or self.person_gender == 'male' and self.person_age >= 20:
-            #     print("a")
             if self.person_gender == 'male' and 13 <= self.person_age <= 19:
                 print("hello", self.person_name, "You are a handsome teenager!")
             elif self.person_gender == 'female' and 13 <= self.person_age <= 19:
@@ -18,7 +16,7 @@ class Person:
             elif self.person_gender == 'female' or self.person_gender == 'male' and self.person_age <= 12:
                 print("hello", self.person_name, "You are too young")
             else:
-                print("error")
+                print("gender must male or female only")
     # creating object of the class
 
 
@@ -26,15 +24,10 @@ name = input('Enter name: ')
 age = input('Enter age: ')
 gender = input('Enter gender: ')
 
-# this will invoke parameterized constructor
-obj = Person(name, int(age), gender)
-# display result
-obj.display()
-
-name2 = input('Enter name: ')
-age2 = input('Enter age: ')
-gender2 = input('Enter gender: ')
-
-obj2 = Person(name2, int(age2), gender2)
-# display result
-obj2.display()
+if age.isalpha():
+    print("age must be a number")
+else:
+    # this will invoke parameterized constructor
+    obj = Person(name, int(age), gender)
+    # display result
+    obj.display()
